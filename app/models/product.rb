@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-with_options presence: true do
+  belongs_to :user 
+  has_many :orders
+  with_options presence: true do
   validates :image
   validates :name
   validates :description

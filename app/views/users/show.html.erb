@@ -1,0 +1,12 @@
+<div class="account-page bg-dark my-5">
+    <div class="container-fruid mx-0"> 
+    <h2 style="color:white;"><%= current_user.nickname %></h2>
+  <div class="row py-2 mx-0 my-2"><h3 style="color:white;">ナビゲーション</h3></div>
+  <div class="row py-2 mx-0 my-2" style="background-color:lightgray; border-bottom:1px black solid;"><div>
+  <div class="row py-2 mx-0 my-2" style="background-color:lightgray; border-bottom:1px black solid;"><a href="#">購入履歴</a></div>
+  <div class="row py-2 mx-0 my-2" style="background-color:lightgray; border-bottom:1px black solid;"><a href="#">カートの中身を見る</a></div>
+  <div class="row py-2 mx-0 my-2" style="background-color:lightgray; border-bottom:1px black solid;"><a href="#">閲覧履歴</a></div>
+    <%= link_to edit_user_registration_path(current_user.id) do %>
+    <p>ご登録情報・パスワードの変更はこちらから</p>
+    <% end %>
+</div>

@@ -1,0 +1,10 @@
+.c {
+  height: 500px;
+  width :cover;
+  margin:0 auto;
+}
+.product-detail{
+width:700px;
+position:relative;
+left:300px;
+}

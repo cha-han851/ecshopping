@@ -1,0 +1,16 @@
+<div class ="container-fruid ">
+  <div class ="row" style="position:fixed; top:0; z-index:9999; width:100%; margin:0 auto;">
+        <div class="header-left col-6">  
+          <h1 class="header-title">Macky</h1>
+        </div>
+        <div class="header-right col-6">
+       <% if user_signed_in? %>
+      <%= button_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname"  %>
+      <%=  button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+    <% else %>  
+      <%= button_to 'ログイン',new_user_session_path  , class: "login" %>
+      <%= button_to "新規登録", new_user_registration_path, class: "sign-up" %>
+    <% end %>
+        </div>
+    </div>
+</div>

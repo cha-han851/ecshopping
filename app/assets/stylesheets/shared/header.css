@@ -1,0 +1,30 @@
+.header {
+  position:fixed;
+  top:0;
+  z-index:9999;
+  margin-right:0;
+}
+
+.header-left{
+  background-color:white; 
+ 
+}
+.header-right{
+  background-color:darkgrey;
+  position:fixed;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+.header-title{
+  font-size: 8vh;
+  text-align: center;
+}
+
+.log_in, .registration, .logout, .user-nickname {
+margin-right:15px;
+height:50px;
+width:80px;
+border-radius: 2px;
+}

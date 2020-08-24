@@ -1,6 +1,5 @@
 class ShippingInformation < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
+  
 
   POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/ 
   PHONE_CODE_REGEX = /\A\d{11}\z/
@@ -14,4 +13,5 @@ class ShippingInformation < ApplicationRecord
     validates :user_id
     validates :item_id
   end
+    
 end

@@ -1,0 +1,29 @@
+.main {
+  height:700px;
+
+}
+.item-lists {
+  display:flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  text-align:center;
+  overflow: scroll;
+  height:70vh;  
+}
+.list{
+  width:17vw;
+  border:solid black 1px;
+  margin:30px 30px 30px 60px;
+  height:50vh;
+  padding:10px 0px; 
+}
+.item-name{
+  margin-top:10px;
+}
+.item-price {
+  padding-top:10px;
+}
+.item-detail{
+  margin-top:20px;
+}
+

@@ -1,22 +1,26 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all.order('created_at DESC')
-
+    
+  end
+  def new
+    @product = Product.new
   end
   def create
-    @proucts = Product.new(image_params)
+    @prouct = Product.new(create_params)
+    @product.save
   end
   def show
     set_params
-  end
-
+  end 
+ 
 private
-def image_params
-  params.require(:product).permit(:content, :image).merge(user_id: current_user.id)
-end
+
 def set_params
   @product = Product.find(params[:id])
 end
 
-
+def create_params
+  params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day, {images: []})
+end
 end

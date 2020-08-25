@@ -17,7 +17,7 @@ class User < ApplicationRecord
     validates :password_confirmation, confirmation: true
     validates :birthday
   end
-
+  
     with_options format: { with: FAMILY_FIRST_NAME_REGEX } do
       validates :family_name
       validates :first_name

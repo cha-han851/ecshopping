@@ -1,11 +1,12 @@
 $(document).ready(function() {
   $('#slide').slick({
     infinite: true,
-    dots: true,
-    slidesToShow: 2,
+    dots: false,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrow: false,
     responsive: [
 {
   breakpoint: 1024,

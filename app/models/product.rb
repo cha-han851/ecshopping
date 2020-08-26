@@ -18,7 +18,7 @@ class Product < ApplicationRecord
   dayaftertommow: 2
   }
 
-
+  acts_as_taggable
   
   
   with_options presence: true do

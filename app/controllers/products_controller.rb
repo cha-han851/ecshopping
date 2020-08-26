@@ -21,6 +21,6 @@ def set_params
 end
 
 def create_params
-  params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day, {images: []})
+  params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day, images: [],:tag_list)
 end
 end

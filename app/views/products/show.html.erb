@@ -3,19 +3,17 @@
 <div>
   <div class="product-detail" style="margin-top:100px;">
     <div class="product-image" style="border:solid 1px black;">
-      <%= image_tag @product.image.variant(resize:'300x300') %>
+      <div class="container">
+       <div class="row" id="slide" style="display:flex"> 
+        <% @product.images.each do |image| %>
+        <div class="c"><%= image_tag image.variant(resize:'150x150') %></div>
+        <% end %>
+        </div>
+      </div>
     </div>
     <div style="border:solid 1px black"><%= @product.price %>円</div>
     <div style="border:solid 1px black"><p>説明文</p><%= @product.description %></div>
     <div>撮影サンプル</div>
-    <div class="container">
-    <div class="row" id="slide" style="display:flex">   
-      <div><img class ="c"src="https://images.pexels.com/photos/4355493/pexels-photo-4355493.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></div>
-      <div><img class ="c" src="https://images.pexels.com/photos/4355398/pexels-photo-4355398.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></div>
-      <div><img class ="c" src="https://images.pexels.com/photos/4342429/pexels-photo-4342429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></div>
-      <div><img class ="c" src="https://images.pexels.com/photos/4334414/pexels-photo-4334414.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></div>
-    </div>
-<div>
 <table style="width:930px; boder:solid black 1px; cellspacing:0;" class="tblShopview01 spacTbl mTop10" summary="D5 XQD-Type ボディのスペック">
 <col width="20%"><col width="30%"><col width="20%"><col width="30%">
 <tr>

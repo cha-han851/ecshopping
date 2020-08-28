@@ -1,26 +1,39 @@
 class ProductsController < ApplicationController
+  before_action :set_search, only: [:index,:search]
+
   def index
-    @products = Product.all.order('created_at DESC')
-    
+    @products = Product.all.order('created_at DESC').includes(:tags)
+    @tag_list = Tag.all   
   end
   def new
-    @product = Product.new
+    @product = ProductTag.new
   end
   def create
-    @prouct = Product.new(create_params)
-    @product.save
+    @product = ProductTag.new(create_params)   
+    if @product.valid?
+      @product.save
+      return redirect_to root_path
+    end
   end
   def show
     set_params
   end 
- 
+  def search
+    @results = @p
+  end
+  def set_search
+    #以下は検索に使うときの記述（変数やモデル名は変更してもいいですが
+    #".ransack(params[:q])"はそのままで使用します。）
+        @search = Product.ransack(params[:q])
+     
+    #以下は検索したものを表示する時に使う記述(一番シンプルで基本の形です)
+        @p= @search.result
+        @products = Product.all
+      end
 private
 
-def set_params
-  @product = Product.find(params[:id])
-end
-
-def create_params
-  params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day, images: [],:tag_list)
-end
+  def create_params
+    params.require(:product_tag).permit(:user_id,:name,:description,:brand,:ship_day,:tag_name,:price,:images,images: [])
+  end
+  
 end

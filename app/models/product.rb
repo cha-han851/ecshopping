@@ -2,7 +2,9 @@ class Product < ApplicationRecord
   belongs_to :user 
   has_many :orders
   has_many_attached :images
- 
+  has_many :tag_maps, dependent: :destroy
+  has_many :tags, through: :tag_maps
+  accepts_nested_attributes_for :tags, allow_destroy: true
   enum brand:{
     Canon: 0, 
     Nikon: 1, 
@@ -18,15 +20,4 @@ class Product < ApplicationRecord
   dayaftertommow: 2
   }
 
-  acts_as_taggable
-  
-  
-  with_options presence: true do
-  validates :name
-  validates :description
-  validates :brand
-  validates :ship_day
-  validates :price,numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }  
-end
- 
 end

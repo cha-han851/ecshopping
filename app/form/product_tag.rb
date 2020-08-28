@@ -2,6 +2,7 @@ class ProductTag
 
   include ActiveModel::Model
   attr_accessor :tag_name, :user_id,:name,:description,:brand,:price,:ship_day,:images
+  
   with_options presence: true do
     validates :tag_name
     validates :user_id

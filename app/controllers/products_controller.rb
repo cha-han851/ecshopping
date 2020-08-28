@@ -9,11 +9,16 @@ class ProductsController < ApplicationController
     @product = ProductTag.new
   end
   def create
-    @product = ProductTag.new(create_params)   
+    @product = ProductTag.new(create_params)
+    binding.pry
     if @product.valid?
       @product.save
       return redirect_to root_path
+    else
+      render "new"
     end
+    @product.save
+     
   end
   def show
     set_params
@@ -33,7 +38,7 @@ class ProductsController < ApplicationController
 private
 
   def create_params
-    params.require(:product_tag).permit(:user_id,:name,:description,:brand,:ship_day,:tag_name,:price,:images,images: [])
+    params.require(:product_tag).permit(:user_id,:name,:description,:brand,:ship_day,:price, :images,:tag_name,images: [])
   end
   
 end

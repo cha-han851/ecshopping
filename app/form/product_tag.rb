@@ -17,7 +17,8 @@ class ProductTag
 
   def save
     product = Product.create(user_id: user_id,name: name,description: description,brand: brand,price: price,ship_day: ship_day,images: images)
-    tag = Tag.create(tag_name: tag_name)
+    tag = Tag.where(tag_name: tag_name).first_or_initialize
+    tag.save
 
     TagMap.create(product_id: product.id, tag_id: tag.id)
   end

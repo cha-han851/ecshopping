@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   has_many :tags, through: :tag_maps
   accepts_nested_attributes_for :tags, allow_destroy: true
   
+  
   enum brand:{
     Canon: 0, 
     Nikon: 1, 

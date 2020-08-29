@@ -4,7 +4,13 @@
 </h1>
 <%= search_form_for @search, url: products_search_path do |f| %>
   <%= f.label :name_eq, '商品名' %>
-  <%= f.collection_select :name_eq, @products, :name, :name,  include_blank: '指定なし' %>
-  <br>
-  <%= f.submit '検索' %>
+  <%= f.text_field :name %>
+  <br>  
+<%= f.label :size_eq, 'ブランド' %>
+    <%= f.collection_select :brand_eq, @product_brand, :brand, :brand, include_blank: '指定なし'%>
+    <br>
+    <%#= f.label :tag_name_eq, 'カテゴリー：' %>
+    <%#= f.collection_select :tag_name_eq, @tag_name, :tag_name, :tag_name, include_blank: '指定なし' %>
+    <br>
+     <%= f.submit '検索' %>
 <% end %>

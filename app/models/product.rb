@@ -21,5 +21,8 @@ class Product < ApplicationRecord
   tomorrow: 1,
   dayaftertommow: 2
   }
+    
+
+
   
 end

@@ -4,12 +4,16 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order('created_at DESC').includes(:tags)
     @tag_list = Tag.all   
+    set_product_column
+    set_tag_column
   end
   def new
     @product = Product.new
   end
   def create
+
     @product = Product.new(create_params)
+
     if @product.valid?
       @product.save
       return redirect_to root_path
@@ -38,6 +42,17 @@ private
 
   def create_params
     params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day,:price, :images,:tag_name,images: [])
+  end
+  def set_params
+  @product = Product.find(params[:id])
+  end
+  def set_product_column
+    @product_name = Product.select("name").distinct
+    @product_brand = Product.select("brand").distinct
+    @product_tag = Product.select("tag_name").distinct
+  end
+  def set_tag_column
+    @tag_name = Tag.select("tag_name").distinct
   end
   
 end

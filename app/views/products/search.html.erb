@@ -4,14 +4,15 @@
 <%# 検索結果の個数で条件分岐 %>
  <% if @results.length !=0 %>
   <% @results.each do |result| %>
-     <%  result.images.first(1).each do |image| %>
+     <% result.images.first(1).each do |image| %>
     <li>
       <%= result.name %>
       <%= result.price %>
       <%= result.brand %>
-  
+      <%= image_tag image.variant(resize:'1500x150') %>
       
     </li>
+    <% end%>
   <% end %>
 <% else %>
   該当する商品はありません

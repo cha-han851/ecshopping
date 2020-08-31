@@ -1,7 +1,11 @@
 .c {
   height: 500px;
-  width :cover;
+  width :300px;
   margin:0 auto;
+
+}
+.product-image{
+  width:300px;
 }
 .product-detail{
 width:700px;

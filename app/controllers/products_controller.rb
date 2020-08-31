@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order('created_at DESC').includes(:tags)
     @tag_list = Tag.all   
+    set_product_column
+    set_tag_column
   end
   def new
     @product = Product.new
@@ -33,11 +35,22 @@ class ProductsController < ApplicationController
     #以下は検索したものを表示する時に使う記述(一番シンプルで基本の形です)
         @p= @search.result
         @products = Product.all
+        
       end
 private
 
   def create_params
     params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day,:price, :images,:tag_name,images: [])
+  end
+  def set_params
+    @product = Product.find(params[:id])
+  end
+  def set_product_column
+    @product_name = Product.select("name").distinct
+    @product_brand = Product.select("brand").distinct
+  end
+  def set_tag_column
+    @tag_name = Tag.select("tag_name").distinct
   end
   
 end

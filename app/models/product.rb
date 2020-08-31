@@ -7,13 +7,13 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :tags, allow_destroy: true
   
   enum brand:{
-    Canon: 0, 
-    Nikon: 1, 
-    SONY: 2, 
-    FUJIFILM: 3, 
-    Panasonic: 4, 
-    OLYMPUS: 5,
-    PENTAX:  6
+    Canon: "Canon", 
+    Nikon: "Nikon", 
+    SONY: "SONY", 
+    FUJIFILM: "FUJIFILM", 
+    Panasonic: "Panasonic", 
+    OLYMPUS: "OLYMPUS",
+    PENTAX:  "PENTAX"
   }
   enum ship_day: {
   today: 0,

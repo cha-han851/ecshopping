@@ -7,7 +7,7 @@ ActiveAdmin.register Product do
       f.input :user
       f.input :name
       f.input :description
-      f.input :brand
+      f.input :brand,as: :select, collection: Product.brands.keys
       f.input :ship_day
       f.input :price
       f.input :images, as: :file, input_html: { multiple: true }

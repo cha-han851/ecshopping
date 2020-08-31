@@ -5,8 +5,8 @@
         </div>
         <div class="header-right col-6">
        <% if user_signed_in? %>
-      <%= button_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname"  %>
-      <%=  button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+      <%= button_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname btn btn-lg"  %>
+      <%=  button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout btn"  %>
     <% else %>  
       <%= button_to 'ログイン',new_user_session_path  , class: "login" %>
       <%= button_to "新規登録", new_user_registration_path, class: "sign-up" %>

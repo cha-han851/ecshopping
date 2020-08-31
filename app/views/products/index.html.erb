@@ -1,11 +1,12 @@
 <%= render "shared/header" %>
 <div class ="container-fruid">
   <div class ="row logo-image"style="margin: 50px 0px 0px 0px"></div>
-  </div>
-  <div class="row">
-    <div class="left-contents col-2 px-2"><%= render "sidebar" %></div>
-    <div class="right-contents col-9"><%= render "main" %></div>
+  <div class="row image1"></div>
+  <div class="row image2"></div>
+    <div class="row">
+      <div class="left-contents col-3"><%= render "sidebar" %></div>
+      <div class="right-contents col-9"><%= render "main" %></div>
    </div>
-   
-<%= link_to '新規作成', new_product_path %>
+   </div>
+
 <%= render "shared/footer" %>

@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_062213) do
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
-    t.integer "brand", null: false
+    t.string "brand", null: false
     t.integer "ship_day", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -99,9 +99,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_062213) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tag_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "tag_name", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

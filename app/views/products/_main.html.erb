@@ -13,9 +13,9 @@
                     <%= product.name %>
                   </h3>
                   <div class='item-price'>
-                    <span><%= product.price %>円<br>(税込み)</span>
+                    <span><%= product.price.to_s(:delimited) %>円<br>(税込み)</span>
                     <%= link_to product_path(product.id) do %>
-                   <div><button type="button" class="btn btn-secondary item-detail">商品詳細</button></div>
+                   <div><button type="button" class="btn btn-secondary item-detail ">商品詳細</button></div>
                     <% end %>
                   </div>
                 </div>

@@ -1,15 +1,21 @@
 <div class ="container-fruid ">
   <div class ="row" style="position:fixed; top:0; z-index:9999; width:100%; margin:0 auto;">
         <div class="header-left col-6">  
-          <h1 class="header-title">Macky</h1>
+          <h1 class="title">Macky</h1>
         </div>
         <div class="header-right col-6">
        <% if user_signed_in? %>
-      <%= button_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname btn btn-lg"  %>
-      <%=  button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout btn"  %>
+      <%= link_to current_user.nickname, user_path(current_user.id),method: :get, class: "user-nickname"  %>
+      <%=  link_to  destroy_user_session_path, method: :delete, class: "logout" do  %>
+        <span>ログアウト</span>
+      <% end %>
     <% else %>  
-      <%= button_to 'ログイン',new_user_session_path  , class: "login" %>
-      <%= button_to "新規登録", new_user_registration_path, class: "sign-up" %>
+      <%= link_to new_user_session_path, class:"no-underline" do %>
+      <span class="login">ログイン</span>
+      <% end %>
+      <%= link_to  new_user_registration_path, class:"no-underline" do %>
+      <span class="signup">新規登録</span>
+    <% end %>
     <% end %>
         </div>
     </div>

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'products/search'
   resources :products, only: [:index, :create, :show, :new] 
   resources :users, only: [:edit, :update, :create, :show]
+  resources :articles, only: [:show]
 end

@@ -1,12 +1,29 @@
+
 <%= render "shared/header" %>
 <div class ="container-fruid">
-  <div class ="row logo-image"style="margin: 50px 0px 0px 0px"></div>
-  <div class="row image1"></div>
-  <div class="row image2"></div>
+  <!--<div  style="margin: 70px 0px 0px 0px"></div>-->
+  <div class="row ">
+    <div class="col-2 image7 load-fade1"> </div>
+    <div class="col-5 image6 load-fade1"></div>
+    <div class="col-5 image5 load-fade1"></div>
+  </div>
+   <div class="row">
+    <div class="col-3 image1 load-fade2"></div>
+    <div class="col-5 image2 load-fade2" style="padding:0px;"><div class="bg-mask"><h1 style="color:white; position:relative; left:20px;">あなただけの写真に出会おう</h1></div></div>
+    <div class="col-4 image3 load-fade2"></div>
+  </div>
+  <div class="row">
+    <div class="col-4 image8 load-fade3" style="posistion:relative; top:-250px;margin-bottom:-250px;"></div>
+    <div class="col-4 image4 load-fade3"style="posistion:relative; top:-250px;margin-bottom:-250px;"></div>
+  </div>
+  <div class="news"style="text-align:center; height:200px; overflow:scroll; margin-bottom:40px;">
+      <h2 class="my-3"style="font-size:24px; font-family:cursive;">お知らせ</h2>
+   <%= render 'articles/list' %>
+  </div>
+  <div class="row"></div>
     <div class="row">
       <div class="left-contents col-3"><%= render "sidebar" %></div>
-      <div class="right-contents col-9"><%= render "main" %></div>
+      <div class="right-contents col-9 main"><%= render "main" %></div>
    </div>
-   </div>
-
+</div>
 <%= render "shared/footer" %>

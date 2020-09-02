@@ -23,13 +23,14 @@
 }
 
 
-.login, .signup {
+.login, .signup, .logout, .user-nickname {
 margin-right:15px;
 font-family:"cursive";
 color:black;
 font-size:20px;
 text-decoration: none;
 }
+
 .no-underline{
   text-decoration:none !important;
 }

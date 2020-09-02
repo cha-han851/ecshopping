@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order('created_at DESC').includes(:tags)
     @tag_list = Tag.all   
+    @articles = Article.all
     set_product_column
     set_tag_column
   end

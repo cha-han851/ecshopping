@@ -10,6 +10,8 @@ require("channels")
 require ('jquery')
 require('../slick.js')
 require("../tag")
+require("../image")
+//require("../load")
 
 
 

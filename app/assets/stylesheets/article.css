@@ -1,0 +1,19 @@
+.no-under-line{
+  text-decoration:none !important;
+  color:black;
+}
+
+.article-detail {
+  width:40vw;
+  margin: 0 auto;
+  padding:20px 0px;
+}
+.article-image{
+  margin:0 auto;
+  width:40vw;
+}
+
+.article-content{
+line-height: 25px;
+
+}

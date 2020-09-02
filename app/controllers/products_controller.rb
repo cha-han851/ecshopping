@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
   def create
+
     @product = Product.new(create_params)
+
     if @product.valid?
       @product.save
       return redirect_to root_path
@@ -45,6 +47,7 @@ private
   end
   def set_params
     @product = Product.find(params[:id])
+
   end
   def set_product_column
     @product_name = Product.select("name").distinct

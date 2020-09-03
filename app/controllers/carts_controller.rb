@@ -1,15 +1,15 @@
 class CartsController < ApplicationController
-  before_action :setup_cart_item!, only: [:add_item, :update_item, :delete_item]
+  before_action :setup_cart_product!, only: [:add_product, :update_product, :delete_product]
 
   def show
-    @cart_productss = current_cart.cart_products
+    @cart_products = current_cart.cart_products
   end
 
   def add_product
     if @cart_product.blank?
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
+      
     end
-
     @cart_product.quantity += params[:quantity].to_i
     @cart_product.save
     redirect_to ''

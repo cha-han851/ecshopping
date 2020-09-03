@@ -63,4 +63,4 @@ gem 'activeadmin'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'ransack'
-
+gem 'font-awesome-rails'

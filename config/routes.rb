@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     post '/add_product',to: 'carts#add_product'
     post '/update_product', to:'carts#update_product'
     delete '/delete_product', to:'carts#delete_product'
+  resources :orders, only:[:create, :index]
 end

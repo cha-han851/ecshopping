@@ -110,15 +110,14 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
   end
 
   create_table "shipping_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "order_id", null: false
+    t.bigint "order_id", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "block", null: false
     t.string "building"
     t.string "postal_code", null: false
-    t.integer "phone_number", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "phone_number", null: false
+    t.index ["order_id"], name: "index_shipping_informations_on_order_id"
   end
 
   create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -157,6 +156,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
   add_foreign_key "cart_items", "products"
   add_foreign_key "cart_products", "carts"
   add_foreign_key "cart_products", "products"
+  add_foreign_key "shipping_informations", "orders"
   add_foreign_key "tag_maps", "products"
   add_foreign_key "tag_maps", "tags"
 end

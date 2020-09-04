@@ -1,23 +1,57 @@
-<%= render 'shared/header' %>
 
-<div>
-  <div class="product-detail" style="margin-top:100px;">
-    <div class="product-image" style="border:solid 1px black;">
+<div class="advertisement">
+    <img class="ad-image" src="https://images.unsplash.com/photo-1536632087471-3cf3f2986328?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9">
+    <img class="ad-image" src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9">
+    製品・ソリューション
+    <img class="ad-image" src="https://images.unsplash.com/photo-1516962126636-27ad087061cc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9">
+    <img class="ad-image" src="https://images.unsplash.com/photo-1536627217140-899b0bc9d881?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9">
+</div>
+<div style="display:flex;">
+  <div class="product-detail" style="margin-top:50px;" >
+    <div class="product-image">
       <div class="container">
        <div id="slide" style="display:flex"> 
         <% @product.images.each do |image| %>
-        <div class="c"><%= image_tag image.variant(resize:'200x200') %></div>
+        <div class="c"><%= image_tag image.variant(resize:'300x300') %></div>
         <% end %>
         </div>
       </div>
     </div>
-    <div style="border:solid 1px black"><%= @product.price %>円</div>
-    <div style="border:solid 1px black"><p>説明文</p><%= @product.description %></div>
-    <div>撮影サンプル</div>
-
-
-    <div><a href="#">関連商品</a></div>
+    
+    <div class="test">
+    <div class="name" style="padding:15px;"><h2><%= @product.name %></h2></div>
+    <div class="price">価格<%= @product.price.to_s(:delimited) %>円</div>
+    <div class="description"><p>説明文</p><%= @product.description %></div>  
+  </div>
+  </div>
+  <div class="cart">
+    <%= link_to carts_path do%>
+      <button><%= fa_icon("cart-plus") %>カートの中身を確認する</button>
+    <% end %>
+    <%= form_with(url: add_product_path, local: true) do |f|%>
+      <span>価格<%= @product.price.to_s(:delimited) %>円</span>
+      <%= f.label :quantity, '個数:' %><%= f.select :quantity, {'1': 1, '2': 2, '3':3 }, { include_blank: '--'}, { class: 'quantity-field'} %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= f.submit value: "カートにいれる"%>
+    <% end %>
+    <%= link_to '購入する', product_orders_path(@product.id)  %>
   </div>
 </div>
-<div><a href ="#">カートにいれる</a></div>
+<div class="inquery">
+    <h3>不明点がある場合</h3>
+    <input class="question" placeholder="質問またはキーワードを入力してください">
+</div>
+<div class="review-form">
+  <h3>レビュー・評価</h3>
+    <ul class="review-list">
+      <li class="review">起動にも問題なく、さらに静音性も高い。
+
+読み込みもはやくフォートナイトのダウンロードとインストールは合計で10分ほどで終了しました。
+性能は非常によし！</li>
+      <li class="review">CPU，メモリなどの基本的なスペックは問題ないはずなのだが，それほど重い作業をしているわけでないのに突然アプリケーションが落ちることが度々ある</li>
+      <li class="review">Ryzen7ということもあり、非常に高速でパワフルです。CPU使用率は10%を超えることはまずないです。その他ついても全く問題なく、デザインも良いので自慢のパソコンです。</li>
+      <li class="review">ライトの色も自由に変えれる。
+コスパいいと思う。</li>
+    </ul>
+</div>
 <%= render 'shared/footer' %>

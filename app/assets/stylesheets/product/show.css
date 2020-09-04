@@ -1,3 +1,14 @@
+.advertisement{
+  width:70vw;
+  margin:0 auto;
+  border:1px gray solid;
+}
+.ad-image{
+  height:100px;
+  width:100px;
+  margin:0px 40px 0px 40px;
+
+}
 .c {
   height: 500px;
   width :300px;
@@ -8,7 +19,44 @@
   width:300px;
 }
 .product-detail{
-width:700px;
-position:relative;
-left:300px;
+width:60vw;
+margin:0 auto;
+display:flex;
+border:1px solid lightgray;
+border-collapse: collapse;
+height:100vh
+}
+.test{
+  display:flex
+  flex-direction: column;
+}
+.price, .description{
+  padding:20px;
+}
+
+/*カート*/
+.cart{
+  margin:0 auto;
+  height:100vh;
+  border:1px solid lightgray;
+  border-collapse: collapse;
+  margin-top:50px;
+  margin-bottom:50px;
+  margin-left:-110px;
+}
+/* フォーム*/
+.inquery{
+  width:60vw;
+  margin:0 auto;
+  padding:20px;
+}
+.question{
+  width:330px;
+}
+
+.review-list{
+  padding: 20px;
+}
+.review{
+padding: 20px 0px;
 }

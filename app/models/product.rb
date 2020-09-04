@@ -21,8 +21,17 @@ class Product < ApplicationRecord
   tomorrow: 1,
   dayaftertommow: 2
   }
-    
-
-
+ 
+  PHONE_CODE_REGEX = /\A\d{11}\z/
+  with_options presence: true do
+  
+  validates :user_id
+  validates :product_id
+  validates :name, null: false
+  validates :price, null: false
+  validates :description, null: false
+  validates :brand, null: false
+  validates :ship_day, null: false
+  end
   
 end

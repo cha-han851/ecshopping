@@ -34,7 +34,7 @@
       <%= hidden_field_tag(:product_id, @product.id) %>
       <%= f.submit value: "カートにいれる"%>
     <% end %>
-    <%= link_to '購入する', orders_path %>
+    <%= link_to '購入する', product_orders_path(@product.id)  %>
   </div>
 </div>
 <div class="inquery">

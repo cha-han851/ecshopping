@@ -6,7 +6,7 @@
       if(chargeForm){
         function addEvent(chargeForm){
          
-         Payjp.setPublicKey(“PAY.pk_test_c67d52a46b67d97a86228a89”);// PAY.JPテスト公開鍵
+         Payjp.setPublicKey("pk_test_c67d52a46b67d97a86228a89");// PAY.JPテスト公開鍵
           chargeForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
@@ -21,6 +21,7 @@
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
         const token = response.id;
+        console.log(token);
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
@@ -35,4 +36,11 @@
       } 
     });
   });
+}
+if(!eventReady){
+  addEvent(chargeForm);
+  eventReady = true;
+  }
+}
+}, 1000);
 }

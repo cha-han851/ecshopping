@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
 private
 
   def create_params
-    params.require(:product).permit(:user_id,:name,:description,:brand,:ship_day,:price, :images,:tag_name,images: [])
+    params.require(:product).permit(:name,:description,:brand,:ship_day,:price, :images,:tag_name,images: [])
   end
   def set_params
     @product = Product.find(params[:id])

@@ -34,6 +34,12 @@ height:100vh
   padding:20px;
 }
 
+.ad-content-image{
+padding-top:60px;
+height:40vh;
+width:15vw;
+}
+
 /*カート*/
 .cart{
   margin:0 auto;
@@ -42,7 +48,19 @@ height:100vh
   border-collapse: collapse;
   margin-top:50px;
   margin-bottom:50px;
-  margin-left:-110px;
+  margin-left:-100px;
+  padding: 30px 15px;
+}
+.buy{
+margin-right:15px;
+font-family:"cursive";
+color:black;
+font-size:24px;
+text-decoration: none;
+}
+.cart-content{
+  padding:20px 10px;
+  font-size:20px;
 }
 /* フォーム*/
 .inquery{
@@ -56,6 +74,8 @@ height:100vh
 
 .review-list{
   padding: 20px;
+  width:60vw;
+  margin:0 auto;
 }
 .review{
 padding: 20px 0px;

@@ -66,16 +66,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "quantity", default: 0
-    t.bigint "product_id", null: false
-    t.bigint "cart_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
-    t.index ["product_id"], name: "index_cart_items_on_product_id"
-  end
-
   create_table "cart_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quantity", default: 0
     t.bigint "product_id", null: false
@@ -99,7 +89,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
@@ -130,7 +119,9 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tag_name", null: false
+    t.string "tag_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -152,8 +143,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_091405) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "cart_items", "carts"
-  add_foreign_key "cart_items", "products"
   add_foreign_key "cart_products", "carts"
   add_foreign_key "cart_products", "products"
   add_foreign_key "shipping_informations", "orders"

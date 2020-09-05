@@ -1,10 +1,10 @@
 
 ActiveAdmin.register Product do
-  permit_params :user_id, :name, :description, :brand, :ship_day, :price,:tag_name,tag_name: [],images: [] , tags_attributes: [ :tag_name, :id ] 
+  permit_params :description, :brand, :ship_day,:name, :price,:tag_name,tag_name: [],images: [] , tags_attributes: [ :tag_name, :id ] 
   
   form html: { multipart: true }  do |f|
     f.inputs "ProductTab" do
-      f.input :user
+      f.semantic_errors
       f.input :name
       f.input :description
       f.input :brand,as: :select, collection: Product.brands.keys

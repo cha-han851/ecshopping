@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :user 
+  # belongs_to :user 
   has_many :orders
   has_many_attached :images
   has_many :tag_maps, dependent: :destroy
@@ -24,9 +24,6 @@ class Product < ApplicationRecord
  
   PHONE_CODE_REGEX = /\A\d{11}\z/
   with_options presence: true do
-  
-  validates :user_id
-  validates :product_id
   validates :name, null: false
   validates :price, null: false
   validates :description, null: false

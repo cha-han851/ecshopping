@@ -1,6 +1,6 @@
 class OrderInformation
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :block, :building, :phone_number, :user_id, :product_id,:order_id, :token,:authenticity_token
+  attr_accessor :postal_code, :prefecture_id, :city,:price, :block, :building, :phone_number, :user_id, :product_id,:order_id, :token,:authenticity_token
    PHONE_CODE_REGEX = /\A\d{11}\z/
     POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/ 
   

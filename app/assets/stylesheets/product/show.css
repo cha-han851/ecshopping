@@ -48,8 +48,9 @@ width:15vw;
   border-collapse: collapse;
   margin-top:50px;
   margin-bottom:50px;
-  margin-left:-100px;
+  margin-left:-70px;
   padding: 30px 15px;
+  text-align:center;
 }
 .buy{
 margin-right:15px;
@@ -62,6 +63,9 @@ text-decoration: none;
   padding:20px 10px;
   font-size:20px;
 }
+.quantity-field{
+  width:45px;
+}
 /* フォーム*/
 .inquery{
   width:60vw;
@@ -71,7 +75,11 @@ text-decoration: none;
 .question{
   width:330px;
 }
+.review-form{
+  width:330px;
+ margin-left:300px;
 
+}
 .review-list{
   padding: 20px;
   width:60vw;

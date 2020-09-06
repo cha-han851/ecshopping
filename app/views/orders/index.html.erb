@@ -1,18 +1,34 @@
-
-    
-              
-<% @product.images.first(1).each do |image| %>
-<%= image_tag image.variant(resize:'200x200') %>
-<% end %>    
-<div class='product-info'>
-  <h3 class='product-name mxy-3'>
-    <%= @product.name %>
-  </h3>
-  <div class='product-price'>
-    <span><%= @product.price.to_s(:delimited) %>円<br>(税込み)</span>
-   <div><button type="button" class="btn btn-secondary">商品詳細</button></div>
+ <% if @cart_product.blank? == nil %>
+  <% @product.images.first(1).each do |image| %>
+  <%= image_tag image.variant(resize:'200x200') %>
+  <% end %>    
+  <div class='product-info'>
+    <h3 class='product-name mxy-3'>
+      <%= @product.name %>
+    </h3>
+    <div class='product-price'>
+      <span><% @product.price  %>円<br>(税込み)</span>
+    <div><button type="button" class="btn btn-secondary">商品詳細</button></div>
+    </div>
   </div>
-</div>
+  <% else %>
+    <% @cart_products.each do |cart_product|%>
+      <% cart_product.product.images.first(1).each do |image| %>
+        <%= image_tag image.variant(resize:'200x200') %>
+      <% end %> 
+    <div class='product-info'>
+      <h3 class='product-name mxy-3'>
+        <%= cart_product.product.name %>
+      </h3>
+      <div class='product-price'>
+    <span> <%= cart_product.product.price * @cart_product.quantity %>円<br>(税込み）</span>
+      <% @sum += cart_product.product.price * @cart_product.quantity %>
+      </div>
+    </div>
+  <% end %>
+  <span>合計金額：：<%= @sum %>円<br>(税込み)</span>
+<% end %>  
+
         
 <div class="payment-form">
 <%= form_with  model: @orders_information_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
@@ -81,6 +97,7 @@
         <%= f.text_field :phone_number, id: "phone_number", class:"input-default", placeholder:"例）09012345678",maxlength:"11"%>
       </div>
     </div>
+  <%= hidden_field_tag(:price, @sum) %>
     <div class='buy-btn'>
       <%= f.submit "購入" ,class:"buy-red-btn" %>
     </div>

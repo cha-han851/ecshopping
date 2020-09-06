@@ -1,2 +1,2 @@
-<%= form_with(model: @cartproduct, local: true) do |f|%>
-<% end %>
+商品が追加されました
+<p><%= link_to '購入する', product_orders_path(@product.id), class:"buy cart-content"  %></p>

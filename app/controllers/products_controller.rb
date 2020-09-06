@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @articles = Article.all
     set_product_column
     set_tag_column
+ 
   end
   def new
     @product = Product.new
@@ -26,6 +27,7 @@ class ProductsController < ApplicationController
   end
   def show
     set_params
+    
   end 
   def search
     @results = @p
@@ -56,5 +58,6 @@ private
   def set_tag_column
     @tag_name = Tag.select("tag_name").distinct
   end
-  
+ 
 end
+

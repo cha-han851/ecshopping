@@ -6,6 +6,7 @@ class User < ApplicationRecord
   # has_many :products
   has_many :orders
 
+
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   PASSWORD_REGEX = /(?=.*\d+.*)(?=.*[a-zA-Z]+.*)./.freeze
   FAMILY_FIRST_NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze

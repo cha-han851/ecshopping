@@ -20,15 +20,15 @@
     
     <div class="test">
     <div class="name" style="padding:15px;"><h2><%= @product.name %></h2></div>
-    <div class="price">価格<%= @product.price.to_s(:delimited) %>円</div>
-    <div class="description"><p>説明文</p><%= @product.description %></div>  
+    <div class="price"><h3>価格<%= @product.price.to_s(:delimited) %>円</h3></div>
+    <div class="description"><h3>説明文</h3><%= @product.description %></div>  
   </div>
   </div>
   <div class="cart">
-    <p class="price cart-content">価格<%= @product.price.to_s(:delimited) %>円</p>
+    <h3 class="price cart-content">価格<%= @product.price.to_s(:delimited) %>円</h3>
     <%= form_with(url: add_product_path, local: true) do |f|%>
-      <p class="cart-content"> <%= f.label :quantity, '個数:' %><%= f.select :quantity, {'1': 1, '2': 2, '3':3 }, { include_blank: '--'}, { class: 'quantity-field'} %>
-      <%= hidden_field_tag(:product_id, @product.id) %>
+      <p class="cart-content"> <%= f.label :quantity, '個数:' %><%= f.number_field :quantity, { class: 'quantity-field'} %>
+      <%= hidden_field_tag(:product_id, @product.id) %>   
       <%= f.submit value: "カートにいれる"%>
     <% end %>
     <%= link_to carts_path do%>
@@ -55,4 +55,5 @@
 コスパいいと思う。</li>
     </ul>
 </div>
+
 <%= render 'shared/footer' %>

@@ -1,4 +1,3 @@
 ActiveAdmin.register Tag do
-permit_params :tag_name
-
+  permit_params :tag_name
 end

@@ -6,7 +6,6 @@ class User < ApplicationRecord
   # has_many :products
   has_many :orders
 
-
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   PASSWORD_REGEX = /(?=.*\d+.*)(?=.*[a-zA-Z]+.*)./.freeze
   FAMILY_FIRST_NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
@@ -18,14 +17,14 @@ class User < ApplicationRecord
     validates :password_confirmation, confirmation: true
     validates :birthday
   end
-  
-    with_options format: { with: FAMILY_FIRST_NAME_REGEX } do
-      validates :family_name
-      validates :first_name
-    end
 
-    with_options format: { with: FAMILY_FIRST_NAME_KANA_REGEX } do
-      validates :family_name_kana
-      validates :first_name_kana
-    end
+  with_options format: { with: FAMILY_FIRST_NAME_REGEX } do
+    validates :family_name
+    validates :first_name
+  end
+
+  with_options format: { with: FAMILY_FIRST_NAME_KANA_REGEX } do
+    validates :family_name_kana
+    validates :first_name_kana
+  end
 end

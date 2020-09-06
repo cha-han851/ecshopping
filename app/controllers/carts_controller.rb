@@ -11,14 +11,14 @@ class CartsController < ApplicationController
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
       @cart_product.quantity += params[:quantity].to_i
       @cart_product.save
-    
-    elsif @cart_product != nil 
+
+    elsif !@cart_product.nil?
       @cart_product.quantity += params[:quantity].to_i
       @cart_product.save
     else
-    redirect_to ''
+      redirect_to ''
+    end
   end
-end
 
   def update_product
     @cart_product.update(quantity: params[:quantity].to_i)
@@ -30,14 +30,13 @@ end
     redirect_to ''
   end
 
-
   def setup_cart_product!
     @cart_product = current_cart.cart_products.find_by(product_id: params[:product_id])
   end
 
   private
+
   def set_user
     @user = current_user
   end
-
- end
+end

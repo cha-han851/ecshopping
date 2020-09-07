@@ -66,3 +66,7 @@ gem 'image_processing', '~> 1.2'
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'payjp'
+
+group :production do
+  gem 'rails_12factor'
+end

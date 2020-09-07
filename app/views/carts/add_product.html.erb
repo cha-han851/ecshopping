@@ -1,2 +1,7 @@
-商品が追加されました
-<p><%= link_to '購入する', product_orders_path(@product.id), class:"buy cart-content"  %></p>
+
+
+<div class="added-heading">
+  <h1>商品が追加されました</h1>
+  <%= link_to '購入する', product_orders_path(@product.id), class:"buy cart-content" %>
+  <%= link_to '戻る', root_path,class:"buy cart-content" %>
+</div>

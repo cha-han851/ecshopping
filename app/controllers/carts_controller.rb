@@ -1,8 +1,10 @@
 class CartsController < ApplicationController
   before_action :setup_cart_product!, only: [:add_product, :update_product, :delete_product]
   before_action :set_user, only: [:add_product]
+  before_action :set_product, only:[:add_product]
   def show
     @cart_products = current_cart.cart_products
+    @sum = 0
   end
 
   def add_product
@@ -15,6 +17,7 @@ class CartsController < ApplicationController
     elsif !@cart_product.nil?
       @cart_product.quantity += params[:quantity].to_i
       @cart_product.save
+ 
     else
       redirect_to ''
     end
@@ -39,4 +42,8 @@ class CartsController < ApplicationController
   def set_user
     @user = current_user
   end
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
+
 end

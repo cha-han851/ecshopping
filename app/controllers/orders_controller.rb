@@ -12,11 +12,12 @@ class OrdersController < ApplicationController
       @order_information = OrderInformation.new
 
     elsif !@cart_product.nil?
+      @order_information = OrderInformation.new
       @carts = Cart.all
       current_cart
       @cart = current_cart
       @cart_products = @cart.cart_products
-
+      
     else
       redirect_to new_user_session_path
     end
@@ -27,8 +28,8 @@ class OrdersController < ApplicationController
     if @order_information.valid?
       pay_item
       @order_information.save
-
-      @current_product.destroy
+      @carts = Cart.all
+      current_cart.destroy
 
       return redirect_to root_path
     end

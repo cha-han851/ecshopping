@@ -16,9 +16,9 @@ class Product < ApplicationRecord
     PENTAX: 'PENTAX'
   }
   enum ship_day: {
-    today: 0,
-    tomorrow: 1,
-    dayaftertommow: 2
+    "1~2日以内": 0,
+    "3~4日以内": 1,
+    "5日以上": 2
   }
 
   PHONE_CODE_REGEX = /\A\d{11}\z/.freeze

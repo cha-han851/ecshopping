@@ -67,6 +67,7 @@ gem 'ransack'
 gem 'font-awesome-rails'
 gem 'payjp'
 gem 'rails-i18n'
+gem 'enum_help'
 
 group :production do
   gem 'rails_12factor'

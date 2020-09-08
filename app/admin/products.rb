@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
   permit_params :description, :brand, :ship_day, :name, :price, :tag_name, tag_name: [], images: [], tags_attributes: [:tag_name, :id]
 
   form html: { multipart: true } do |f|
-    f.inputs 'ProductTab' do
+    f.inputs 'Product' do
       f.semantic_errors
       f.input :name
       f.input :description

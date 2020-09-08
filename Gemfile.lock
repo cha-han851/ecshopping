@@ -105,6 +105,8 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -345,6 +347,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  enum_help
   font-awesome-rails
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

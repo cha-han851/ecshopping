@@ -26,9 +26,9 @@ border:1px solid lightgray;
 border-collapse: collapse;
 height:100vh
 }
-.test{
-  display:flex
- 
+.show-wrap{
+  display:flex;
+  flex-direction:column
 }
 .price, .description{
   padding:20px;

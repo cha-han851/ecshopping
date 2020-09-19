@@ -24,9 +24,10 @@ class Product < ApplicationRecord
   PHONE_CODE_REGEX = /\A\d{11}\z/.freeze
   with_options presence: true do
     validates :name, null: false
-    validates :price, null: false
+    validates :price, null: false, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
     validates :description, null: false
     validates :brand, null: false
     validates :ship_day, null: false
+    validates :images, null: false
   end
 end

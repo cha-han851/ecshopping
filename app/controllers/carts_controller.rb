@@ -1,7 +1,8 @@
 class CartsController < ApplicationController
   before_action :setup_cart_product!, only: [:add_product, :update_product, :delete_product]
   before_action :set_user, only: [:add_product]
-  before_action :set_product, only:[:add_product]
+  before_action :set_product, only: [:add_product]
+  before_action :check_user, only: [:show, :add_product]
   def show
     @cart_products = current_cart.cart_products
     @sum = 0
@@ -17,20 +18,22 @@ class CartsController < ApplicationController
     elsif !@cart_product.nil?
       @cart_product.quantity += params[:quantity].to_i
       @cart_product.save
- 
+
     else
-      redirect_to ''
+      redirect_to root_path
     end
   end
 
   def update_product
     @cart_product.update(quantity: params[:quantity].to_i)
-    redirect_to ''
+    redirect_to root_path
   end
 
   def delete_product
+    @cart_products = current_cart.cart_products
+    @cart_product = @cart_products.find(params[:id])
     @cart_product.destroy
-    redirect_to ''
+    redirect_to root_apth
   end
 
   def setup_cart_product!
@@ -42,8 +45,12 @@ class CartsController < ApplicationController
   def set_user
     @user = current_user
   end
+
   def set_product
     @product = Product.find(params[:product_id])
   end
 
+  def check_user
+    redirect_to root_path unless user_signed_in?
+  end
 end

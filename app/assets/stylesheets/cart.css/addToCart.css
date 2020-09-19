@@ -1,0 +1,13 @@
+
+
+ /*cart-add*/
+ 
+ .added-heading{
+  border:2px gray solid;
+  width:50vw;
+  display:flex;
+  flex-direction:column;
+  align-items:bottom;
+  margin:0 auto;
+  margin-top:200px;
+}

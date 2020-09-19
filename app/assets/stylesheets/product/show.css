@@ -9,7 +9,7 @@
   margin:0px 40px 0px 40px;
 
 }
-.c {
+.product-image-size {
   height: 500px;
   width :300px;
   margin:0 auto;
@@ -39,6 +39,10 @@ padding-top:60px;
 height:40vh;
 width:15vw;
 }
+.name {
+  padding:15px;
+}
+
 
 /*カート*/
 .cart{

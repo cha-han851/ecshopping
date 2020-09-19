@@ -14,12 +14,12 @@ describe User do
       it 'Nicknameが空では登録できないこと' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Nicknameを入力してください")
+        expect(@user.errors.full_messages).to include('Nicknameを入力してください')
       end
       it 'emailが空では登録できないこと' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
       it '重複したemailだと登録できない' do
         @user.save
@@ -35,7 +35,7 @@ describe User do
       it 'passwordが空だと登録できない' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'passwordが5文字以下であれば登録できないこと' do
         @user.password = '12345'
@@ -52,12 +52,12 @@ describe User do
       it 'passwordが存在してもpassword_confirmationが空の場合は登録できない' do
         @user.password_confirmation = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）を入力してください")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）を入力してください')
       end
       it 'ユーザー本名の名字が空だと登録できない' do
         @user.family_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("姓は不正な値です")
+        expect(@user.errors.full_messages).to include('姓は不正な値です')
       end
       it 'ユーザー本名の名前が空だと登録できない' do
         @user.first_name = nil
@@ -82,18 +82,18 @@ describe User do
       it 'ユーザー本名の名前のフリガナが空だと登録できない' do
         @user.first_name_kana = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("名（カナ）は不正な値です")
+        expect(@user.errors.full_messages).to include('名（カナ）は不正な値です')
       end
       it 'ユーザー本名のフリガナは全角（カタカナ）でなければ登録できない' do
         @user.family_name_kana = 'ﾃｽﾄ'
         @user.first_name_kana = 'ﾃｽﾄ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("姓（カナ）は不正な値です", "名（カナ）は不正な値です")
+        expect(@user.errors.full_messages).to include('姓（カナ）は不正な値です', '名（カナ）は不正な値です')
       end
       it '生年月日が空だと登録できない' do
         @user.birthday = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("生年月日を入力してください")
+        expect(@user.errors.full_messages).to include('生年月日を入力してください')
       end
       context
     end

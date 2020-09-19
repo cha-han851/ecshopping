@@ -15,7 +15,7 @@ ActiveAdmin.register Product do
         f.has_many :tags do |t|
           t.input :tag_name,
                   as: :select,
-                  collection: { '一眼レフ' => '一眼レフ', 'ミラーレス' => 'ミラーレス', '本体のみ' => '本体のみ', '初心者用' => '初心者用', '広角レンズ' => '広角レンズ', '望遠レンズ' => '望遠レンズ'}
+                  collection: { '一眼レフ' => '一眼レフ', 'ミラーレス' => 'ミラーレス', '本体のみ' => '本体のみ', '初心者用' => '初心者用', '広角レンズ' => '広角レンズ', '望遠レンズ' => '望遠レンズ' }
           # collection:  Tag.all.map { |a| [a.tag_name,a.tag.id]}
         end
       end

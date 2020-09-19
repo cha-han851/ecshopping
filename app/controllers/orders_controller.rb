@@ -2,22 +2,23 @@ class OrdersController < ApplicationController
   before_action :order_params
   before_action :set_params
   before_action :setup_cart_product!, only: [:index, :create]
+
   def index
     @sum = 0
-
-    if user_signed_in? && @cart_product.blank?
+    @cart_products = current_cart.cart_products
+    if user_signed_in? && @cart_products == nil
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
       @cart_product.quantity += 1
       @cart_product.save
       @order_information = OrderInformation.new
 
-    elsif !@cart_product.nil?
+    elsif user_signed_in? &&!@cart_products.nil?
       @order_information = OrderInformation.new
       @carts = Cart.all
       current_cart
       @cart = current_cart
       @cart_products = @cart.cart_products
-      
+
     else
       redirect_to new_user_session_path
     end
@@ -31,9 +32,8 @@ class OrdersController < ApplicationController
       @carts = Cart.all
       current_cart.destroy
 
-      return redirect_to root_path
     end
-    render 'index'
+    render action: 'create'
   end
 
   private

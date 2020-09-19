@@ -29,6 +29,5 @@ class Product < ApplicationRecord
     validates :brand, null: false
     validates :ship_day, null: false
     validates :images, null: false
-    
   end
 end

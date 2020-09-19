@@ -15,6 +15,11 @@
            <p> <%= cart_product.product.price %>円(税込み</p>
           <div class='cart-total-price'>
             <% @sum += cart_product.product.price * cart_product.quantity %>
+             <%= form_with(url: delete_product_path,method: :delete, local: true) do |f|%>
+             <%= hidden_field_tag(:id, cart_product.id) %> 
+              <%= f.submit value: "削除する"%>
+            <% end %>
+        
   <% end %>
   </div>
       </li>  

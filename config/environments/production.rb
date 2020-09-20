@@ -112,4 +112,4 @@ Rails.application.configure do
   
  
 end
-server '54.95.209.63', user: 'ec2-user', roles: %w{app db web}
+# server '54.95.209.63', user: 'ec2-user', roles: %w{app db web}

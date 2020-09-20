@@ -1,11 +1,11 @@
 <div class ="container-fruid ">
-  <div class ="row" style="position:fixed; top:0; z-index:9999; width:100%; margin:0 auto;">
+  <div class ="header row">
         <div class="header-left col-6">  
           <h1 class="title">Macky</h1>
         </div>
         <div class="header-right col-6">
        <% if user_signed_in? %>
-      <%= link_to  user_path(current_user.id),method: :get, class: "no-underline" do %>
+      <%= link_to "",method: :get, class: "no-underline" do %>
       <span class="user-nickname"><%= current_user.nickname %></span>
       <% end %>
       <%=  link_to  destroy_user_session_path, method: :delete, class: "no-underline" do  %>

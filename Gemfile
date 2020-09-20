@@ -36,6 +36,12 @@ group :development, :test do
   gem 'faker'
   gem 'gimei'
   gem 'shoulda-matchers'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+
 end
 
 group :development do
@@ -73,7 +79,9 @@ gem 'font-awesome-rails'
 gem 'payjp'
 gem 'rails-i18n'
 gem 'enum_help'
+gem "aws-sdk-s3", require: false
 
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end

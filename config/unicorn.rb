@@ -6,7 +6,7 @@ worker_processes 1
 
 # 「current」を指定
 # working_directory "#{app_path}/current"
-working_directory '/var/www/ecshopping/current/config/uncorn.rb'
+working_directory "#{app_path}/current/config/unicorn.conf"
 # 「shared」の中を参照するよう変更
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 

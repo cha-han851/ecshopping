@@ -5,8 +5,8 @@ app_path = File.expand_path('../../../', __FILE__)
 worker_processes 1
 
 # 「current」を指定
-working_directory "#{app_path}/current"
-
+# working_directory "#{app_path}/current"
+working_directory '/var/www/current/config/uncorn.rb'
 # 「shared」の中を参照するよう変更
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 

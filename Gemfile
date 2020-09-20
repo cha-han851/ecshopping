@@ -77,7 +77,6 @@ gem 'image_processing', '~> 1.2'
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'payjp'
-gem 'rails-i18n'
 gem 'enum_help'
 gem "aws-sdk-s3", require: false
 

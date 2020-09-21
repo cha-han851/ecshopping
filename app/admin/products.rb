@@ -11,6 +11,7 @@ ActiveAdmin.register Product do
       f.input :price
       f.input :images, as: :file, input_html: { multiple: true }
       f.input :images, as: :file, input_html: { multiple: true }
+      f.input :images, as: :file, input_html: { multiple: true }
       f.inputs do
         f.has_many :tags do |t|
           t.input :tag_name,

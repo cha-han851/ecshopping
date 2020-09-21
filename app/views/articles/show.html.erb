@@ -1,7 +1,9 @@
 <div class="article-detail">
   <h2 class="article-title"><%= @article.title %></h2>
   <div>
+    <% unless @article.image.blank? %>
     <%= image_tag @article.image, class:"article-image" %>
+    <% end %>
 </div>
   <div class="article-content">
     <%= @article.content %>

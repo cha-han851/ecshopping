@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :article do
-    title { 'テスト'}
+    title { 'テスト' }
     content {'これはテストです。'}
   end
 end

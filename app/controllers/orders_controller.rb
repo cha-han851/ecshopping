@@ -6,13 +6,13 @@ class OrdersController < ApplicationController
   def index
     @sum = 0
     @cart_products = current_cart.cart_products
-    if user_signed_in? && @cart_products == nil
+    if user_signed_in? && @cart_products.nil?
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
       @cart_product.quantity += 1
       @cart_product.save
       @order_information = OrderInformation.new
 
-    elsif user_signed_in? &&!@cart_products.nil?
+    elsif user_signed_in? && !@cart_products.nil?
       @order_information = OrderInformation.new
       @carts = Cart.all
       current_cart

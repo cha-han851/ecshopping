@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  
-  before_action :check_user, only:[:show, :edit, :update]
-  
+  before_action :check_user, only: [:show, :edit, :update]
+
   def create
     @user = User.new(configure_permitted_parameters_params)
     if @user.save
@@ -26,10 +25,10 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   private
+
   def check_user
-    if !user_signed_in? 
-    redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in?
   end
 end

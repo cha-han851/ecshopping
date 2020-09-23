@@ -4,14 +4,17 @@ class OrdersController < ApplicationController
   before_action :setup_cart_product!, only: [:index, :create]
 
   def index
+    # 合計金額を出すための@sumを定義
     @sum = 0
     @cart_products = current_cart.cart_products
+    #ログインユーザーであることかつカートに商品がない場合
     if user_signed_in? && @cart_products.nil?
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
       @cart_product.quantity += 1
       @cart_product.save
       @order_information = OrderInformation.new
 
+    # ログインユーザーかつカートに商品がある場合
     elsif user_signed_in? && !@cart_products.nil?
       @order_information = OrderInformation.new
       @carts = Cart.all
@@ -30,10 +33,11 @@ class OrdersController < ApplicationController
       pay_item
       @order_information.save
       @carts = Cart.all
+      # 商品購入後はカートを削除する
       current_cart.destroy
 
     end
-    render action: 'create'
+    render action: 'index'
   end
 
   private

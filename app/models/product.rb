@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  # belongs_to :user
   has_many :orders
   has_many_attached :images
   has_many :tag_maps, dependent: :destroy

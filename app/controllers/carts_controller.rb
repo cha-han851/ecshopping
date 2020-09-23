@@ -9,6 +9,7 @@ class CartsController < ApplicationController
   end
 
   def add_product
+    # カートがない場合は新しく作って商品を追加する
     if user_signed_in? && @cart_product.blank?
       @cart = current_cart
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])

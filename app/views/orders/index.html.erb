@@ -29,7 +29,7 @@
           </h3>
           <span>個数:<%= @cart_product.quantity%></span>
           <div class='cart-total-price'>
-        <span> <%= cart_product.product.price.to_s(:delimited) %>円(税込み</span>
+        <span> <%= cart_product.product.price.to_s(:delimited) %>円(税込み)</span>
           <% @sum += cart_product.product.price * @cart_product.quantity %>
           <% end %>
             <p>合計金額：<%= @sum.to_s(:delimited) %>円(税込み)</p>

@@ -29,19 +29,24 @@
   height: 40px;
   width: 150px;
   margin-top:30px;
+  margin-bottom:30px;
  }
  .button{
-  margin-top: 30px;
-  height: 30px;
-  width: 100px;
-
+  margin-top: 10px;
+  height: 40px;
+  width: 150px;
+  margin-bottom:30px;
  }
  
- .order-prodrct-detail{
-   width:50vw;
+ .order-product-detail{
+   width:60vw;
    margin: 0 auto;
  }
- .payment-info-input,  .info-input-haedline{
+ .payment-info-input{
+  text-align:center;
+  margin-top:25px;
+ }
+ .info-input-headline{
   text-align:center;
   margin-top:25px;
  }
@@ -60,4 +65,13 @@
  .shipping-address-form{
   width:60vw;
   margin: 0 auto;
+ }
+
+
+.address-form {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
  }

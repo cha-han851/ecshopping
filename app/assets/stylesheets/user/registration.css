@@ -137,10 +137,10 @@
   margin: 0 auto;
 }
 
-.register-red-btn {
+.register-gray-btn {
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: darkgray;
+  border: 1px solid black;
   color: #fff;
   line-height: 48px;
   font-size: 14px;

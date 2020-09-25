@@ -1,7 +1,7 @@
 .advertisement{
-  width:70vw;
-  margin:0 auto;
+  width:77vw;
   border:1px gray solid;
+  margin:0 auto;
 }
 .ad-image{
   height:100px;
@@ -19,18 +19,21 @@
   width:300px;
 }
 .product-detail{
-width:60vw;
 margin:0 auto;
 display:flex;
-border:1px solid lightgray;
-border-collapse: collapse;
-height:100vh
+
 }
 .show-wrap{
+  height:80vh;
+  border:1px solid lightgray;
+  margin-top:60px;
+
+}
+.detail{
   display:flex;
   flex-direction:column
 }
-.price, .description{
+.price, .description, .brand, .tag {
   padding:20px;
 }
 
@@ -46,15 +49,10 @@ width:15vw;
 
 /*カート*/
 .cart{
-  margin:0 auto;
-  height:100vh;
-  border:1px solid lightgray;
-  border-collapse: collapse;
-  margin-top:50px;
-  margin-bottom:50px;
-  margin-left:-70px;
+  height:70vh;
+  margin-bottom:60px;
   padding: 30px 15px;
-  text-align:center;
+  text-align:center; 
 }
 .buy{
 margin-right:15px;

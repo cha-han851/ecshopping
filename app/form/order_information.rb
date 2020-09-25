@@ -11,13 +11,11 @@ class OrderInformation
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :block
-    #  validates :building
     validates :phone_number, format: { with: PHONE_CODE_REGEX }
   end
 
   def save
     order = Order.create(user_id: user_id, product_id: product_id)
-
     ShippingInformation.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, order_id: order.id)
   end
 end

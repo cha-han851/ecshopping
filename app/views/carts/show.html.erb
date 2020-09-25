@@ -1,35 +1,48 @@
-
-<div class="cart-product-lists">
-<ul>
-  <% @cart_products.each do |cart_product| %>
-  <li class="cart-product-list">
-      <div class="cart-product-image">
-          <% cart_product.product.images.first(1).each do |image| %>
-            <%= image_tag image.variant(resize:'200x200') %>
-          <% end %> 
-      
-          <h3 class='cart-product-name'>
-            <%= cart_product.product.name %><br>
-          </h3>
-          <span>個数:<%= cart_product.quantity%></span>
-           <p> <%= cart_product.product.price %>円(税込み</p>
-          <div class='cart-total-price'>
-            <% @sum += cart_product.product.price * cart_product.quantity %>
-             <%= form_with(url: delete_product_path,method: :delete, local: true) do |f|%>
-             <%= hidden_field_tag(:id, cart_product.id) %> 
-              <%= f.submit value: "削除する"%>
-            <% end %>
-        
-  <% end %>
-  </div>
-      </li>  
-            <p>合計金額：<%= @sum.to_s(:delimited) %>円(税込み)</p>
-          </div>  
-           
-        </ul>
+<div>
+<%= render 'shared/header'%>
 </div>
+<div class="cart-wrap">
+<% if not @cart_products ==nil %>
+    <ul class="cart-product-lists" style="margin:0 auto">
+      <% @cart_products.each do |cart_product| %>
+      <li class="cart-product-list">
+          <div class="cart-product-image">
+              <% cart_product.product.images.first(1).each do |image| %>
+                <%= image_tag image.variant(resize:'200x200') %>
+              <% end %> 
+              <h3 class='cart-product-name'>
+                <%= cart_product.product.name %><br>
+              </h3>
+              <span>個数:<%= cart_product.quantity%></span>
+              <p> <%= cart_product.product.price %>円(税込み)</p>
+              <div class='cart-total-price'>
+                <% @sum += cart_product.product.price * cart_product.quantity %>
+                <%= form_with(url: delete_product_path,method: :delete, local: true) do |f|%>
+                <%= hidden_field_tag(:id, cart_product.id) %> 
+                  <%= f.submit value: "削除する"%>
+                <% end %>
+            <% end %>
+              </div>
+          </div>  
+         </li>      
+    </ul>
+</div>
+   
+  <% else %>
+  <div class="show-empty">
+  <h2>カートの中は空です。</h2>
+  <p>カートの商品を入れてください。<p>
+  <%= link_to '戻る', root_path %>
+  <% end %>
+</div>
+  <div class ="show-bottom">
+  <p>合計金額：<%= @sum.to_s(:delimited) %>円(税込み)</p>
+  <a href="javascript:history.back();">一つ前のページへ戻る</a>
+  </div>
 
-
+<div>
+  <%= render 'shared/footer'%>
+</div>
 
     
       

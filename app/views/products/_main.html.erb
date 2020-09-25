@@ -1,5 +1,6 @@
       <ul class="item-lists my-4">
        <% @products.each do |product| %>
+       <%# 最初の画像だけを表示 %>
         <%  product.images.first(1).each do |image| %>
             <li class='list'>
               <%= link_to product_path(product.id) do %>

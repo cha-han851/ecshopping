@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
     elsif user_signed_in? && !@cart_products.nil?
       @order_information = OrderInformation.new
       @carts = Cart.all
-      current_cart
       @cart = current_cart
       @cart_products = @cart.cart_products
 

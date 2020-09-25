@@ -1,7 +1,12 @@
-
+<%= render 'shared/header'%>
 
 <div class="added-heading">
   <h1>商品が追加されました</h1>
   <%= link_to '購入する', product_orders_path(@product.id), class:"buy cart-content" %>
-  <%= link_to '戻る', root_path,class:"buy cart-content" %>
+  <%= link_to carts_path do%>
+        <button><%= fa_icon("cart-plus") %>カートの中身を確認する</button>
+      <% end %>
+  <%= link_to '戻る', root_path %>
 </div>
+
+<%= render 'shared/footer'%>

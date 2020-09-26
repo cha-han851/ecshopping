@@ -3,6 +3,13 @@
   color:black;
 }
 
+.news{
+width:50vw;
+margin:0 auto;
+text-align:center; 
+height:200px; 
+margin-bottom:40px;
+}
 .article-detail {
   width:40vw;
   margin: 0 auto;
@@ -17,3 +24,11 @@
 line-height: 25px;
 
 }
+.news-list{
+  margin:0 auto;
+  height:200px;
+  list-style: none;
+  text-align:left; 
+  overflow:scroll;
+}
+

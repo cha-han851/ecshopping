@@ -6,6 +6,7 @@ class CartsController < ApplicationController
   
   def show
     @cart_products = current_cart.cart_products
+
     @sum = 0
   end
 
@@ -35,7 +36,12 @@ class CartsController < ApplicationController
     @cart_products = current_cart.cart_products
     @cart_product = @cart_products.find(params[:id])
     @cart_product.destroy
-    redirect_to root_apth
+    if @cart_product == nill
+      @cart = current_cart
+      @cat.destroy
+    else
+    redirect_to root_path
+    end
   end
 
   def setup_cart_product!

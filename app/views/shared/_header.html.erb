@@ -5,8 +5,8 @@
         </div>
         <div class="header-right col-6">
        <% if user_signed_in? %>
-      <%= link_to "",method: :get, class: "no-underline" do %>
-      <span class="user-nickname"><%= current_user.nickname %></span>
+      <%= link_to user_path(current_user.id), method: :get, class: "no-underline" do %>
+      <span class="user-nickname"><%=current_user.nickname %></span>
       <% end %>
       <%=  link_to  destroy_user_session_path, method: :delete, class: "no-underline" do  %>
         <span class="logout">ログアウト</span>

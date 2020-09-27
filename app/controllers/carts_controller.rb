@@ -1,9 +1,9 @@
 class CartsController < ApplicationController
-  before_action :setup_cart_product!, only: [:add_product, :update_product, :delete_product,:show]
+  before_action :setup_cart_product!, only: [:add_product, :update_product, :delete_product, :show]
   before_action :set_user, only: [:add_product]
   before_action :set_product, only: [:add_product]
   before_action :check_user, only: [:show, :add_product]
-  
+
   def show
     @cart_products = current_cart.cart_products
 
@@ -40,7 +40,7 @@ class CartsController < ApplicationController
       @cart = current_cart
       @cat.destroy
     else
-    redirect_to root_path
+      redirect_to root_path
     end
   end
 

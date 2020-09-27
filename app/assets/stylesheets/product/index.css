@@ -131,9 +131,17 @@
 
 
 /*product/search*/
- .result-list{
+.result-list{
    border:1px gray solid;
    width:40vw;
    margin:0 auto;
    padding:20px;
+   margin-top:50px;  
  }
+.result{
+  height:80vh;
+}
+.result-heading{
+text-align:center;
+margin-top:150px;
+}

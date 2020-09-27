@@ -36,9 +36,9 @@ class CartsController < ApplicationController
     @cart_products = current_cart.cart_products
     @cart_product = @cart_products.find(params[:id])
     @cart_product.destroy
-    if @cart_product == nill
+    if @cart_product == nil
       @cart = current_cart
-      @cat.destroy
+      @catr.destroy
     else
       redirect_to root_path
     end

@@ -1,0 +1,22 @@
+.my-page-heading {
+  position:relative;
+  top:130px;
+  left:250px;
+}
+
+.my-page{
+  width:40vw;
+  height:60vh;
+  background-color:lightgray;
+  margin:120px 0px;
+  position:relative;
+  left:250px;
+  top:100px;
+  padding:30px;
+  text-align:center;
+  border:1px solid darkgray;
+}
+.my-page-link{
+  border-bottom:1px solid gray;
+  line-height:10vh;
+}

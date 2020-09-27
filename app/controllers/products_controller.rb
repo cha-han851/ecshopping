@@ -27,8 +27,7 @@ class ProductsController < ApplicationController
 
   def show
     set_params
-    @tag= Tag.find(params[:id])
-
+    @tag = Tag.find(params[:id])
   end
 
   def search

@@ -9,9 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 require ('jquery')
 require('../slick.js')
-require("../tag")
 require("../image")
 require("../card")
+require("../gallery")
+require("../preview")
 //require("../load")
 
 

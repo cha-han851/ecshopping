@@ -1,0 +1,40 @@
+<%# ヘッダー %>
+<div class="header">
+<%= render 'shared/header'%>
+</div>
+
+<%# メイン %>
+<div class="container-fruid">
+<div class="row">
+<div class="post_form col-6">
+<%= form_with  model:@gallery,method: :post,id: "new_gallery",local: true do |f| %>
+<%= f.file_field :image,id:"image_upload" %>
+<%= f.text_field :caption, id: "gallery_caption"%>
+<%= hidden_field :gallery, :user_id, value: current_user.id %>
+<%= f.submit value:"投稿する",id:"submit" %>
+<div id="image-list"clas="col-3"></div>
+<% end %>
+</div>
+
+</div>
+
+<div class="galleries">
+  
+  <div class="gallery" id ="gallery">
+    <ul class="post_details">
+    <%  @galleries.each do |gallery|%>
+    <li class="post_detail">
+     <%= image_tag gallery.image.variant(resize:'400x250') %>
+      <%# <%= gallery.user.nickname %> 
+      <%# <%= gallery.caption %> 
+      <%# <%= gallery.created_at %> 
+    </li>
+     <%end%>
+    <div>
+  </ul>
+</div>
+<section>
+<%# フッター %>
+<div>
+<%= render 'shared/footer'%>
+</div>

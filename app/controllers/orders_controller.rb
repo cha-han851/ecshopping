@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     # 合計金額を出すための@sumを定義
     @sum = 0
     @cart_products = current_cart.cart_products
-    #ログインユーザーであることかつカートに商品がない場合
+    # ログインユーザーであることかつカートに商品がない場合
     if user_signed_in? && @cart_products.nil?
       @cart_product = current_cart.cart_products.build(product_id: params[:product_id])
       @cart_product.quantity += 1

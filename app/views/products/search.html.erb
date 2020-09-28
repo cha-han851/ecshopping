@@ -1,14 +1,17 @@
-<h1 style="text-align:center;">
-  検索結果
-</h1>
+<%= render 'shared/header'%>
+<div class="result">
+
 <%# 検索結果の個数で条件分岐 %>
 <ul>
  <% if @results.length !=0 %>
+ <h1 class="result-heading">
+  検索結果
+</h1>
   <% @results.each do |result| %>
      <% result.images.first(1).each do |image| %>
     <li class="result-list">
     <%= link_to product_path(result.id) do %>
-      <%= image_tag image.variant(resize:'1500x150') %>
+      <%= image_tag image.variant(resize:'200x150') %>
       <% end %>
       <p>商品名:<%= result.name %></p>
       <p> 価格：<%= result.price.to_s(:delimited) %>円</p>
@@ -19,7 +22,13 @@
       </ul>
 <% else %>
 <h1>
+  検索結果
+</h1>
+<h1>
   該当する商品はありません
 </h1>
-  
+
 <% end %>
+</div>
+<%= render 'shared/footer'%>
+

@@ -24,10 +24,10 @@
     <ul class="post_details">
     <%  @galleries.each do |gallery|%>
     <li class="post_detail">
+    <%= link_to gallery_path(gallery.id) do%>
      <%= image_tag gallery.image.variant(resize:'400x250') %>
-      <%# <%= gallery.user.nickname %> 
-      <%# <%= gallery.caption %> 
-      <%# <%= gallery.created_at %> 
+     <% end %>
+     
     </li>
      <%end%>
     <div>

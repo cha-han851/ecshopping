@@ -1,0 +1,18 @@
+
+
+.my-page{
+  width:40vw;
+  height:60vh;
+  background-color:lightgray;
+  margin:150px 0px;
+  position:relative;
+  left:250px;
+ 
+  padding:30px;
+  text-align:center;
+  border:1px solid darkgray;
+}
+.my-page-link{
+  border-bottom:1px solid gray;
+  line-height:10vh;
+}

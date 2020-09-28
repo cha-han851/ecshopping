@@ -1,7 +1,9 @@
 <div class ="container-fruid ">
   <div class ="header row">
         <div class="header-left col-6">  
-          <h1 class="title">Macky</h1>
+        <%= link_to root_path, class:"no-under-line" do %>
+          <h1 class="title no-under-line">Macky</h1>
+          <% end %>
         </div>
         <div class="header-right col-6">
        <% if user_signed_in? %>

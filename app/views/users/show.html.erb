@@ -1,10 +1,18 @@
-<div class="my-page container">
-<div class="row"><h1>マイページ</h1></div>
-  <div class="row">
-    <div class="col-12"><p>購入履歴</p></div>
-    <div class="col-12"><p><%= link_to '自分だけのギャラリーを作成する', galleries_path%></p></div>
-    <div class="col-12"><p>アカウントの編集</p></div>
-    <div class="col-12"><p>カートの中身をみる</p></div>
+<%= render 'shared/header'%>
+<div class="container">
+  <div class="row my-page ">
+    <div class="col-12 my-page-link"><p>購入履歴</p></div>
+    <div class="col-12 my-page-link"><p><%= link_to 'ギャラリー', galleries_path,class:"no-under-line"%></p></div>
+    <div class="col-12 my-page-link"><%= link_to edit_user_path(current_user), class:"no-under-line" do %>
+      <p><%= current_user.nickname %></p>
+    <% end %></div>
+    <div class="col-12 my-page-link">
+      <%= link_to carts_path,class:"no-under-line" do%>
+          <p>カートの中身を確認する</p>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<%= render 'shared/footer'%>
 

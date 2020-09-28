@@ -13,6 +13,7 @@
   height: 500px;
   width :300px;
   margin:0 auto;
+  border:1px gray solid;
 
 }
 .product-image{
@@ -21,6 +22,7 @@
 .product-detail{
 margin:0 auto;
 display:flex;
+height:70vh;
 
 }
 .show-wrap{
@@ -45,7 +47,7 @@ width:15vw;
 .name {
   padding:15px;
 }
-
+margin-left
 
 /*カート*/
 .cart{
@@ -67,26 +69,4 @@ text-decoration: none;
 }
 .quantity-field{
   width:45px;
-}
-/* フォーム*/
-.inquery{
-  width:60vw;
-  margin:0 auto;
-  padding:20px;
-}
-.question{
-  width:330px;
-}
-.review-form{
-  width:330px;
- margin-left:300px;
-
-}
-.review-list{
-  padding: 20px;
-  width:60vw;
-  margin:0 auto;
-}
-.review{
-padding: 20px 0px;
 }

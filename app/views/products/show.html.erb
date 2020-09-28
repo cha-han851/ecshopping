@@ -15,21 +15,18 @@
 
 <%# 商品の詳細 %>
 
-<div class="container">
+<div class="container-fruid">
 <div class="row show-wrap">
-  <div class="product-detail col-8" style="margin-top:50px;" >
+  <div class="product-detail col-7" style="margin-top:50px;" >
     <div class="product-image">
        <div id="slide" style="display:flex"> 
         <% @product.images.each do |image| %>
-        <div class="product-image-size"><%= image_tag image.variant(resize:'300x300') %></div>
+        <div class="product-image-size" ><%= image_tag image.variant(resize:'250x250') %></div>
         <% end %>
         </div>
       </div>
     <div class="detail">
-    <div class="name"><h2><%= @product.name %></h2></div>
-    <div class="price"><h3>価格<%= @product.price.to_s(:delimited) %>円</h3></div>
-    <div class="brand"><h3><%= @product.brand %></h3></div>
-    <div class="tag"><h3><%= @tag.tag_name %></h3></div>
+    <div class="name"><h2><%= @product.brand %>/&nbsp;&nbsp;<%= @product.name %>/&nbsp;&nbsp;<%= @tag.tag_name %></h2></div>
     <div class="description"><h3>説明文</h3><%= @product.description %></div>  
 
   </div>
@@ -37,7 +34,7 @@
   
   <%# ここまで %>
   <%# カートの記述 %>
-    <div class="cart col-4">
+    <div class="cart col-3">
       <h3 class="price cart-content">価格<%= @product.price.to_s(:delimited) %>円</h3>
       <%= form_with(url: add_product_path, local: true) do |f|%>
         <p class="cart-content"> <%= f.label :quantity, '個数:' %><%= f.number_field :quantity, { class: 'quantity-field'} %>

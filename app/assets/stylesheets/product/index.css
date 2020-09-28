@@ -131,12 +131,17 @@
 
 
 /*product/search*/
+.result-lists{
+  overflow: scroll;
+  height:80vh;
+}
 .result-list{
    border:1px gray solid;
    width:40vw;
    margin:0 auto;
    padding:20px;
-   margin-top:50px;  
+   margin-top:50px; 
+   list-style: none; 
  }
 .result{
   height:80vh;

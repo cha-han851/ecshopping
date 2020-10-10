@@ -42,6 +42,7 @@ https://ecshopping-28706.herokuapp.com/admin
 Test user用
 メールアドレス:sample@aaa.co.jp
  /password:aa1111
+ 
 画面上部よりログイン可能です。
 
 

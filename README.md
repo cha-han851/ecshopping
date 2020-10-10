@@ -30,11 +30,11 @@ Ecshoppping
 
 Basic認証
 ユーザー名: admin
-password:2222
+ /password:2222
 
 Admin用
 メールアドレスadmin@sample.com
-password: password123
+ /password: password123
 
 管理者画面のURL
 https://ecshopping-28706.herokuapp.com/admin
